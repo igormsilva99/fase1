@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio - Igor Moreira da Silva</title>
+    <link rel="stylesheet" href="fase3.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="carrossel">
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+            <div class="slides">
+                <div class="slide">
+                    <img src="img/img/foto.jpg" alt="Foto Perfil 1" style="width: 100%; height: auto;">
+                </div>
+                <div class="slide">
+                    <img src="img/img/foto3.jpg" alt="Foto Perfil 2" style="width: 100%; height: auto;">
+                </div>
+                <div class="slide">
+                    <img src="img/img/foto4.jpeg" alt="Foto Perfil 3" style="width: 100%; height: auto;">
+                </div>
+            </div>
+
+            <div class="nav-auto">
+                <label for="radio1" class="nav-dot"></label>
+                <label for="radio2" class="nav-dot"></label>
+                <label for="radio3" class="nav-dot"></label>
+            </div>
+        </div>
+
+        <h1>Igor Moreira da Silva</h1>
+        <h2>Auxiliar Técnico - GPJ Informática</h2>
+    </header>
+
+    <main>
+        <section>
+            <h3>Informações Pessoais</h3>
+            <table>
+                <tr>
+                    <th>Curso</th>
+                    <td>Análise e Desenvolvimento de Sistemas, 4º semestre</td>
+                </tr>
+                <tr>
+                    <th>RA</th>
+                    <td>323132798</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input type="text" id="email" placeholder="seu.email@exemplo.com" onblur="validarEmail(this)">
+                        <span id="email-erro" style="color: red; display: none;">E-mail inválido</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Endereço</th>
+                    <td>Rua José Soares do Amaral, N°32</td>
+                </tr>
+                <tr>
+                    <th>CPF</th>
+                    <td>
+                        <input type="text" id="cpf" placeholder="ddd.ddd.ddd-dd" onblur="validarCPF(this)">
+                        <span id="cpf-erro" style="color: red; display: none;">CPF inválido</span>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>UCS Cursadas</h3>
+            <ul id="lista-ucs" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <li draggable="true" ondragstart="drag(event)">Ambientes computacionais e conectividade <button onclick="removerUC(this)">Remover</button></li>
+                <li draggable="true" ondragstart="drag(event)">Gestão e qualidade de software <button onclick="removerUC(this)">Remover</button></li>
+                <li draggable="true" ondragstart="drag(event)">Modelagem de software <button onclick="removerUC(this)">Remover</button></li>
+                <li draggable="true" ondragstart="drag(event)">Modelos, métodos e técnicas da engenharia de software <button onclick="removerUC(this)">Remover</button></li>
+                <li draggable="true" ondragstart="drag(event)">Programação de soluções computacionais <button onclick="removerUC(this)">Remover</button></li>
+                <li draggable="true" ondragstart="drag(event)">Sistemas computacionais e segurança <button onclick="removerUC(this)">Remover</button></li>
+                <li draggable="true" ondragstart="drag(event)">Vida & Carreira <button onclick="removerUC(this)">Remover</button></li>
+            </ul>
+            <button onclick="adicionarUC()">Adicionar UC</button>
+            <p>Clique e arraste se quiser mudar sua UC de posição</p>
+        </section>
+
+        <section>
+            <h3>Sobre Mim</h3>
+            <p id="descricao-mim">Adoro passar meu tempo livre assistindo aos jogos do meu time (GALÃO), curtindo com minha namorada e família. Também gosto de treinar na academia e, às vezes, ligo o PC para jogar um FIFA ou talvez um Call of Duty.</p>
+            <input type="text" id="nova-descricao" placeholder="Adicione nova descrição">
+            <button onclick="adicionarDescricao()">Adicionar Descrição</button>
+        </section>
+
+        <footer>
+            <a href="https://github.com/igormsilva99" target="_blank">
+                <p>GitHub</p>
+            </a>
+            <a href="https://www.linkedin.com/in/igor-moreira-9a1302242/" target="_blank">
+                <p>LinkedIn</p>
+            </a>
+        </footer>
+    </main>
+</body>
+</html>
